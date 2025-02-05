@@ -1,4 +1,22 @@
+import java.util.Scanner;
+
 public class Main {
+
+    public static void sumOfOddIndexes(int[] array){
+        int sum = 0;
+        for(int i = 1; i < array.length; i += 2){
+            sum += array[i];
+        }
+        System.out.println("Sum of the odd-numbered indexes: " + sum);
+    }
+
+    public static void sumOfEvenIndexes(int[] array){
+        int sum = 0;
+        for(int i = 0; i < array.length; i += 2){
+            sum += array[i];
+        }
+        System.out.println("Sum of the even-numbered indexes: " + sum);
+    }
 
     public static void displayMenu()
     {
@@ -29,7 +47,8 @@ public class Main {
                     //differs from average method
                     break;
                 case 4:
-                    //sum odd-even method
+                    sumOfEvenIndexes(null); // write the array's name instead of null.
+                    sumOfOddIndexes(null); // write the array's name instead of null.
                     break;
                 case 5:
                     exit=true;

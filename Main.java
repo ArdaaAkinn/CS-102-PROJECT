@@ -49,7 +49,7 @@ public class Main {
 
     public static void displayMenu()
     {  
-        System.out.println("Menu:");
+        System.out.println("\nMenu:");
         System.out.println("1. Display the minimum of the array.");
         System.out.println("2. Display the maximum of the array.");
         System.out.println("3. Display how each element differs from the average.");
@@ -88,17 +88,17 @@ public class Main {
             switch(choice)
                 {
                     case 1:
-                        minFinder(array); // write the array's name instead of null. (Mehmetcan)
+                        minFinder(array); 
                         break;
                     case 2:
-                        maxFinder(array); // write the array's name instead of null. 
+                        maxFinder(array); 
                         break;
                     case 3:
                         //differs from average method
                         break;
                     case 4:
-                        sumOfEvenIndexes(null); // write the array's name instead of null.
-                        sumOfOddIndexes(null); // write the array's name instead of null.
+                        sumOfEvenIndexes(array); 
+                        sumOfOddIndexes(array); 
                         break;
                     case 5:
                         exit=true;

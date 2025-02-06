@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -54,14 +55,30 @@ public class Main {
         System.out.println("3. Display how each element differs from the average.");
         System.out.println("4. Display the sum of elements with odd and even indexes.");
         System.out.println("5. Exit.");
-        System.out.println("Choose an option: ");
+        System.out.print("Choose an option: ");
     }
 
     public static void main(String[] args){
+       Scanner scan = new Scanner(System.in); 
+        Random random = new Random();
         
-        //create an array
-
-        Scanner scan = new Scanner (System.in);
+        System.out.print("Enter the size of the array: ");
+        int size = scan.nextInt(); // Take input for array size
+        
+        int[] array = new int[size]; // Create array of that size
+        
+        // Fill array with random numbers
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(101); // Random numbers between 0-100
+        }
+        
+        // Print array size
+        System.out.println("Array size: " + size);
+        
+        // Print array elements
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
         boolean exit = false;
         do
         {
@@ -71,10 +88,10 @@ public class Main {
             switch(choice)
                 {
                     case 1:
-                        minFinder(null); // write the array's name instead of null. (Mehmetcan)
+                        minFinder(array); // write the array's name instead of null. (Mehmetcan)
                         break;
                     case 2:
-                        maxFinder(null); // write the array's name instead of null. 
+                        maxFinder(array); // write the array's name instead of null. 
                         break;
                     case 3:
                         //differs from average method

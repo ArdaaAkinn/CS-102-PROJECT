@@ -2,6 +2,34 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void maxFinder (int[] array)
+    {
+        int maxValue = array[0];
+        for(int i = 1; i < array.length; i++)
+        {
+            if(array[i]>maxValue)
+            {
+                maxValue = array[i];
+            }
+        }
+
+        System.out.println("The maximum value in the array is: " + maxValue);
+    }
+
+    public static void minFinder (int[] array)
+    {
+        int minValue = array[0];
+        for(int i = 1; i < array.length; i++)
+        {
+            if(array[i] < minValue)
+            {
+                minValue = array[i];
+            }
+        }
+
+        System.out.println("The minimum value in the array is: " + minValue);
+    }
+
     public static void sumOfOddIndexes(int[] array){
         int sum = 0;
         for(int i = 1; i < array.length; i += 2){
@@ -31,6 +59,8 @@ public class Main {
 
     public static void main(String[] args){
         
+        //create an array
+
         Scanner scan = new Scanner (System.in);
         boolean exit = false;
         do
@@ -41,10 +71,10 @@ public class Main {
             switch(choice)
                 {
                     case 1:
-                        //minimum method
+                        minFinder(null); // write the array's name instead of null. (Mehmetcan)
                         break;
                     case 2:
-                        //maximum method
+                        maxFinder(null); // write the array's name instead of null. 
                         break;
                     case 3:
                         //differs from average method

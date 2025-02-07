@@ -31,20 +31,46 @@ public class Main {
         System.out.println("The minimum value in the array is: " + minValue);
     }
 
-    public static void sumOfOddIndexes(int[] array){
+    public static int sumOfOddIndexes(int[] array){
         int sum = 0;
         for(int i = 1; i < array.length; i += 2){
             sum += array[i];
         }
-        System.out.println("Sum of the odd-numbered indexes: " + sum);
+        return sum;
     }
 
-    public static void sumOfEvenIndexes(int[] array){
+    public static int sumOfEvenIndexes(int[] array){
         int sum = 0;
         for(int i = 0; i < array.length; i += 2){
             sum += array[i];
         }
-        System.out.println("Sum of the even-numbered indexes: " + sum);
+        return sum;
+    }
+
+    public static double averageOfArray(int[] array)
+    {
+        int sum = sumOfEvenIndexes(array) +  sumOfOddIndexes(array);
+        double average = sum / array.length;
+        return average;
+    }
+
+    public static void differencesFromAverage(int[] array)
+    {
+        double average = averageOfArray(array);
+        
+        System.out.println("The distance of the numbers from the average: "); 
+        for(int i = 0; i < array.length; i++)
+        {
+            if (i == array.length - 1)
+            {
+                System.out.print(array[i] - average);
+            }
+            else
+            {
+                System.out.print(array[i] - average + ", ");
+            }
+        }
+        System.out.println();
     }
 
     public static void displayMenu()
@@ -94,11 +120,13 @@ public class Main {
                         maxFinder(array); 
                         break;
                     case 3:
-                        //differs from average method
+                       //differs from average method
+                        System.out.println("The average of the array: " + averageOfArray(array)); 
+                        differencesFromAverage(array); 
                         break;
                     case 4:
-                        sumOfEvenIndexes(array); 
-                        sumOfOddIndexes(array); 
+                        System.out.println("Sum of the odd-numbered indexes: " + sumOfOddIndexes(array)); 
+                        System.out.println("Sum of the even-numbered indexes: " + sumOfEvenIndexes(array));
                         break;
                     case 5:
                         exit=true;
